@@ -1,0 +1,142 @@
+{
+  "name": "extinct-birds-pebble-watchface",
+  "author": "Darachnid",
+  "version": "0.1.0",
+  "private": true,
+  "keywords": [
+    "pebble-app",
+    "birds",
+    "extinct",
+    "watchface"
+  ],
+  "pebble": {
+    "displayName": "Extinct Birds",
+    "uuid": "d5eb6f53-765b-4e47-9459-7f3caf8cd006",
+    "sdkVersion": "3",
+    "targetPlatforms": [
+      "emery"
+    ],
+    "watchapp": {
+      "watchface": true
+    },
+    "resources": {
+      "media": [
+        {
+          "type": "bitmap",
+          "name": "BIRD_01",
+          "file": "images/bird_nesolimnas_dieffenbachi_altered.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "BIRD_02",
+          "file": "images/bird_reunion_solitaire.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "BIRD_03",
+          "file": "images/bird_ara_erythrocephala.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "BIRD_04",
+          "file": "images/bird_aphanapteryxbonasia.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "BIRD_05",
+          "file": "images/bird_phalacrocorax_perspicillatus.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "BIRD_06",
+          "file": "images/bird_dromaius_peroni.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "BIRD_07",
+          "file": "images/bird_porphyrio_albus.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "BIRD_08",
+          "file": "images/bird_porphyrio_coerulescens.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "BIRD_09",
+          "file": "images/bird_gallirallus_pacificus.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "BIRD_10",
+          "file": "images/bird_extinct_birds_an_attempt_to_unite_in_one_volume_a_.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "BIRD_11",
+          "file": "images/bird_hemiphaga_novaeseelandiae_spadicea.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "BIRD_12",
+          "file": "images/bird_alectroenas_nitidissima_john_gerrard_keulemans_imp.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "BIRD_13",
+          "file": "images/bird_psittacula_wardi_jgk.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "BIRD_14",
+          "file": "images/bird_amazona_martinicana.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "BIRD_15",
+          "file": "images/bird_500px_extinctbirds1907_p16_conurus_labati0313_crop.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "BIRD_16",
+          "file": "images/bird_ara_gossei.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "BIRD_17",
+          "file": "images/bird_ara_tricolor.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "BIRD_18",
+          "file": "images/bird_necropsittacus_borbonicus.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "BIRD_19",
+          "file": "images/bird_lophopsittacus.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "BIRD_20",
+          "file": "images/bird_nestor_productus.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "BIRD_21",
+          "file": "images/bird_siphonorhis_americana.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "BIRD_22",
+          "file": "images/bird_moho_apicalis.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "BIRD_23",
+          "file": "images/bird_fregilupus_varius.png"
+        }
+      ]
+    }
+  }
+}
