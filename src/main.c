@@ -1,7 +1,8 @@
 #include <pebble.h>
 #include <string.h>
 #define NUM_BIRD 23
-#define TRIPLE_TAP_WINDOW_MS 1050
+#define DOUBLE_TAP_PAIR_WINDOW_MS 1500
+#define ADVANCE_COOLDOWN_MS 2000
 
 typedef struct {uint32_t resource_id; const char *common; const char *scientific;} Bird;
 static const Bird BIRD[NUM_BIRD] = {
@@ -38,6 +39,8 @@ static int s_bird_index=-1;
 static char s_time_buffer[16],s_date_buffer[24];
 static uint8_t s_tap_count=0;
 static AppTimer *s_tap_timeout=NULL;
+static AppTimer *s_cooldown_timer=NULL;
+static bool s_cooldown=false;
 
 static int32_t absolute_day(const struct tm *t) {
   int32_t year=t->tm_year+1900,y=year-1;
@@ -67,18 +70,24 @@ static void update_display(struct tm *tick) {
   text_layer_set_text(s_date_layer,s_date_buffer);
 }
 static void tick_handler(struct tm *tick,TimeUnits changed){update_display(tick);}
-static void reset_taps(void *context) {s_tap_count=0;s_tap_timeout=NULL;}
-// Hardware acceleration tap, not touchscreen TouchService: stock firmware
-// deliberately prohibits TouchService in watchfaces.
+static void reset_taps(void *context) { s_tap_count=0; s_tap_timeout=NULL; }
+static void cooldown_finished(void *context) {
+  s_cooldown=false;
+  s_cooldown_timer=NULL;
+}
+// Pebble emits an event for its recognized double-tap gesture.
+// Require two such events, then advance silently and lock out repeats.
 static void accel_tap_handler(AccelAxisType axis,int32_t direction) {
+  if(s_cooldown) return;
   if(s_tap_timeout) {app_timer_cancel(s_tap_timeout);s_tap_timeout=NULL;}
   s_tap_count++;
-  if(s_tap_count>=3) {
+  if(s_tap_count>=2) {
     s_tap_count=0;
     display_bird((s_bird_index+1)%NUM_BIRD);
-    vibes_short_pulse();
+    s_cooldown=true;
+    s_cooldown_timer=app_timer_register(ADVANCE_COOLDOWN_MS,cooldown_finished,NULL);
   } else {
-    s_tap_timeout=app_timer_register(TRIPLE_TAP_WINDOW_MS,reset_taps,NULL);
+    s_tap_timeout=app_timer_register(DOUBLE_TAP_PAIR_WINDOW_MS,reset_taps,NULL);
   }
 }
 static TextLayer *make_label(GRect frame,const char *font_key,GTextAlignment align) {
@@ -111,6 +120,7 @@ static void init(void) {
 static void deinit(void) {
   accel_tap_service_unsubscribe();tick_timer_service_unsubscribe();
   if(s_tap_timeout)app_timer_cancel(s_tap_timeout);
+  if(s_cooldown_timer)app_timer_cancel(s_cooldown_timer);
   if(s_bird_bitmap)gbitmap_destroy(s_bird_bitmap);
   bitmap_layer_destroy(s_bird_layer);
   text_layer_destroy(s_time_layer);text_layer_destroy(s_date_layer);
