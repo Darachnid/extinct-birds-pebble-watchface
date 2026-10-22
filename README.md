@@ -16,6 +16,6 @@ A separate watchface based on the Fish Time software, featuring 22 distinct hist
 
 See `bird_catalog.csv` for source filenames, scientific names, and taxonomic qualifications.
 
-Based on Walter Rothschild, *Extinct Birds* (1907), illustrated by John Gerrard Keulemans and others. Historical plates from Wikimedia Commons. Some illustrations depict hypothetical taxa, and one illustrates a possibly-extinct species. Artwork copyright should be reviewed by jurisdiction and individual artist before publishing, notably George Edward Lodge (d. 1954).
+Based on Walter Rothschild, *Extinct Birds* (1907), illustrated by John Gerrard Keulemans and others. Historical plates from Wikimedia Commons. Some illustrations depict hypothetical taxa, and one illustrates a possibly-extinct species.
 
 Fork/adaptation of https://github.com/Darachnid/fish-of-new-england-pebble-watchface . Uses a new UUID so the fish watchface is not overwritten.
