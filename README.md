@@ -1,9 +1,9 @@
 # Extinct Birds — Pebble Time 2 watchface
 
-A separate watchface based on the Fish Time software, featuring 23 distinct historical illustrations supplied in `birds (1).zip`.
+A separate watchface based on the Fish Time software, featuring 22 distinct historical illustrations supplied in `birds (1).zip`.
 
-- One bird per day; 7-step modular cycle traverses all birds before repeating.
-- Three fast *physical taps* on the watch glass advance to the next bird via the accelerometer. No touchscreen interface is available in a stock watchface.
+- One bird per calendar day, changing automatically at local midnight. The bird cannot be changed manually.
+- A 7-step modular cycle traverses all 22 birds before repeating; there are no tap gestures or controls.
 - Clock and date, common and scientific names.
 - Historic artwork color retained, near-white/yellowed paper cleaned toward white.
 - No companion app, no network.
