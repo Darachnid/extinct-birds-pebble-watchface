@@ -80,9 +80,14 @@ def main() -> None:
         source = ORIGINALS / row["source_file"]
         target = OUTPUT / row["filename"]
         if not source.is_file():
-            print(f"MISSING: {source}")
-            failed.append(source.name)
-            continue
+            # Some archived scans have a numeric index prefix (e.g. "2-").
+            matches = list(ORIGINALS.glob("[0-9]-" + row["source_file"]))
+            if len(matches) == 1:
+                source = matches[0]
+            else:
+                print(f"MISSING: {source}")
+                failed.append(source.name)
+                continue
         optimize(source, target, contrast=args.contrast, color=args.color, margin=args.margin)
         print(f"OK: {target.relative_to(ROOT)}")
     if failed:
