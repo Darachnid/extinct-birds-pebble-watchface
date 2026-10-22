@@ -12,6 +12,22 @@ A separate watchface based on the Fish Time software, featuring 22 distinct hist
 
 `pebble clean && pebble build` then `pebble install --cloudpebble`.
 
+## Screenshot helper
+
+To build a separate preview watchface that advances to a different bird every **10 seconds**:
+
+```bash
+python3 scripts/build_screenshots.py
+```
+
+To build and install it through CloudPebble:
+
+```bash
+python3 scripts/build_screenshots.py --install
+```
+
+The helper creates `.screenshot-build/` with its own app UUID and builds there. It does not change the normal daily watchface, which still changes only at midnight. The preview starts with today's bird and advances through all 22 birds, one every 10 seconds, for screenshots. The helper requires the Pebble SDK and Python 3.
+
 ## Catalog and attribution
 
 See `bird_catalog.csv` for source filenames, scientific names, and taxonomic qualifications.
