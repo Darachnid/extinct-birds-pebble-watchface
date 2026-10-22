@@ -130,11 +130,6 @@
           "type": "bitmap",
           "name": "BIRD_22",
           "file": "images/bird_moho_apicalis.png"
-        },
-        {
-          "type": "bitmap",
-          "name": "BIRD_23",
-          "file": "images/bird_fregilupus_varius.png"
         }
       ]
     }

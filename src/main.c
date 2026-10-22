@@ -1,6 +1,6 @@
 #include <pebble.h>
 #include <string.h>
-#define NUM_BIRD 23
+#define NUM_BIRD 22
 #define DOUBLE_TAP_PAIR_WINDOW_MS 1500
 #define ADVANCE_COOLDOWN_MS 2000
 
@@ -27,8 +27,7 @@ static const Bird BIRD[NUM_BIRD] = {
   {RESOURCE_ID_BIRD_19, "Broad-billed parrot", "Lophopsittacus mauritianus"},
   {RESOURCE_ID_BIRD_20, "Norfolk kaka", "Nestor productus"},
   {RESOURCE_ID_BIRD_21, "Jamaican poorwill", "Siphonorhis americana"},
-  {RESOURCE_ID_BIRD_22, "O\u02bbahu \u02bb\u014d\u02bb\u014d", "Moho apicalis"},
-  {RESOURCE_ID_BIRD_23, "R\u00e9union starling", "Fregilupus varius"}
+  {RESOURCE_ID_BIRD_22, "O\u02bbahu \u02bb\u014d\u02bb\u014d", "Moho apicalis"}
 };
 static Window *s_window;
 static BitmapLayer *s_bird_layer;
@@ -46,7 +45,7 @@ static int32_t absolute_day(const struct tm *t) {
   int32_t year=t->tm_year+1900,y=year-1;
   return 365*y+y/4-y/100+y/400+t->tm_yday;
 }
-// A seeded full-cycle permutation: no repeat until all 44 have appeared.
+// A seeded full-cycle permutation: no repeat until all 22 have appeared.
 static int daily_bird(int32_t day) {return (int)(((uint32_t)day*7u+31u)%NUM_BIRD);}
 static void display_bird(int index) {
   if (index<0 || index>=NUM_BIRD) return;
