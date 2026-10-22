@@ -4,14 +4,14 @@
 
 typedef struct {uint32_t resource_id; const char *common; const char *scientific;} Bird;
 static const Bird BIRD[NUM_BIRD] = {
-  {RESOURCE_ID_BIRD_01, "Dieffenbach\u2019s rail", "Hypotaenidia dieffenbachii"},
-  {RESOURCE_ID_BIRD_02, "R\u00e9union solitaire", "Threskiornis solitarius"},
+  {RESOURCE_ID_BIRD_01, "Dieffenbach's rail", "Hypotaenidia dieffenbachii"},
+  {RESOURCE_ID_BIRD_02, "Reunion solitaire", "Threskiornis solitarius"},
   {RESOURCE_ID_BIRD_03, "Red-headed green macaw", "Ara erythrocephala"},
   {RESOURCE_ID_BIRD_04, "Red rail", "Aphanapteryx bonasia"},
   {RESOURCE_ID_BIRD_05, "Spectacled cormorant", "Urile perspicillatus"},
   {RESOURCE_ID_BIRD_06, "Extinct island emu", "Dromaius sp."},
   {RESOURCE_ID_BIRD_07, "Lord Howe swamphen", "Porphyrio albus"},
-  {RESOURCE_ID_BIRD_08, "R\u00e9union swamphen", "Porphyrio caerulescens"},
+  {RESOURCE_ID_BIRD_08, "Reunion swamphen", "Porphyrio caerulescens"},
   {RESOURCE_ID_BIRD_09, "Tahiti rail", "Hypotaenidia pacifica"},
   {RESOURCE_ID_BIRD_10, "Dodo", "Raphus cucullatus"},
   {RESOURCE_ID_BIRD_11, "Norfolk pigeon", "Hemiphaga spadicea"},
@@ -21,11 +21,11 @@ static const Bird BIRD[NUM_BIRD] = {
   {RESOURCE_ID_BIRD_15, "Guadeloupe parakeet", "Psittacara labati"},
   {RESOURCE_ID_BIRD_16, "Jamaican red macaw", "Ara gossei"},
   {RESOURCE_ID_BIRD_17, "Cuban macaw", "Ara tricolor"},
-  {RESOURCE_ID_BIRD_18, "R\u00e9union parrot", "Necropsittacus borbonicus"},
+  {RESOURCE_ID_BIRD_18, "Reunion parrot", "Necropsittacus borbonicus"},
   {RESOURCE_ID_BIRD_19, "Broad-billed parrot", "Lophopsittacus mauritianus"},
   {RESOURCE_ID_BIRD_20, "Norfolk kaka", "Nestor productus"},
   {RESOURCE_ID_BIRD_21, "Jamaican poorwill", "Siphonorhis americana"},
-  {RESOURCE_ID_BIRD_22, "O\u02bbahu \u02bb\u014d\u02bb\u014d", "Moho apicalis"}
+  {RESOURCE_ID_BIRD_22, "Oahu 'oo", "Moho apicalis"}
 };
 static Window *s_window;
 static BitmapLayer *s_bird_layer;
